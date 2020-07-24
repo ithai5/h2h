@@ -14,9 +14,20 @@ public class Listing {
     private String description;
     private String uploadTime;
     private String email;
+    private String location;
 
     public Listing ()
     {
+    }
+
+    public Listing(int listingId, double price, String name, String description, String uploadTime, String email, String location) {
+        this.listingId = listingId;
+        this.price = price;
+        this.name = name;
+        this.description = description;
+        this.uploadTime = uploadTime;
+        this.email = email;
+        this.location = location;
     }
 
     public int getListingId ()
@@ -77,5 +88,26 @@ public class Listing {
     public void setEmail (String email)
     {
         this.email = email;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    @Override
+    public String toString() {
+        return "Listing{" +
+                "listingId=" + listingId +
+                ", price=" + price +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", uploadTime='" + uploadTime + '\'' +
+                ", email='" + email + '\'' +
+                ", location='" + location + '\'' +
+                '}';
     }
 }
