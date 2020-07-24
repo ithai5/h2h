@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class listingRepo extends DbInteraction {
+public class ListingRepo extends DbInteraction {
 
     public List<Listing> fetchAll() {
         String query = "SELECT * FROM listing;";
@@ -24,9 +24,9 @@ public class listingRepo extends DbInteraction {
             return false;
         }
 
-        String query = "INSERT INTO listing(price, name, description, uploadTime, email, location)\n" +
-                "VALUES(?,?,?,?,?,?)";
-        template.update(query, toAdd.getPrice(), toAdd.getName(), toAdd.getDescription(), toAdd.getUploadTime(),
+        String query = "INSERT INTO listing(price, name, description, email, location)\n" +
+                "VALUES(?,?,?,?,?)";
+        template.update(query, toAdd.getPrice(), toAdd.getName(), toAdd.getDescription(),
                 toAdd.getEmail(), toAdd.getLocation());
         return true;
     }
