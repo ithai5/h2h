@@ -25,6 +25,10 @@ public class ListingService {
         return listingRepo.viewListing(listingId);
     }
 
+    public List<Listing> viewUserListing(String email){
+        return listingRepo.viewUserListing(email);
+    }
+
     // need to implement in a future point
     //public boolean searchListing(Listing listing){
     //    return listingRepo.searchListing(listing);
