@@ -21,6 +21,10 @@ public class ListingService {
         return listingRepo.addListing(listing);
     }
 
+    public Listing viewListing(int listingId){
+        return listingRepo.viewListing(listingId);
+    }
+
     // need to implement in a future point
     //public boolean searchListing(Listing listing){
     //    return listingRepo.searchListing(listing);

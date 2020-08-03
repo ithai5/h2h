@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title><span th:text = ${listing.name}></span></title>
+</head>
+    <body>
+        <span th:text ="${listing.name}"></span>
+        <span th:text ="${listing.price}"></span>
+        <span th:text ="${listing.description}"></span>
+        <span th:text ="${listing.uploadTime}"></span>
+        <span th:text ="${listing.email}"></span>
+        <span th:text ="${listing.location}"></span>
+        <form action="#" th:action ="@{'/listing/'+${listing.listing.listingId}}" method="post">
+            <input type="submit" value="Remove Listing">
+        </form>
+    
+    </body>
+</html>

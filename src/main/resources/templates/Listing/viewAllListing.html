@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Lisiting list</title>
+</head>
+<body>
+    <h1>Listings Available</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Since When</th>
+            <th>Price</th>
+            <th>Location</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="listing:${listings}">
+            <td th:text="${listing.name}"></td>
+            <td th:text="${listing.uploadTime}"></td>
+            <td th:text="${listing.price}"></td>
+            <td th:text="${listing.location}"></td>
+            <td>
+                <form action="#" th:action="@{'/listing/viewListing/'+${listing.listingId}}" method="post">
+                    <input type="submit" value = "View Listing">
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>

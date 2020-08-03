@@ -36,4 +36,11 @@ public class ListingRepo extends DbInteraction {
         template.update(query, listingId);
         return true;
     }
+
+    public Listing viewListing(int listingId){
+        String query = "SELECT * FROM listing " +
+                       "WHERE listingId = ? ";
+        RowMapper<Listing> rowMapper = new BeanPropertyRowMapper<>(Listing.class);
+        return template.query(query,rowMapper, listingId).get(0);
+    }
 }
