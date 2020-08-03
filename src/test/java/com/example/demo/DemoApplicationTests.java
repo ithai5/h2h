@@ -10,6 +10,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+
+import java.util.Scanner;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
@@ -52,6 +55,12 @@ class DemoApplicationTests {
 
         test.setEmail("test@email.com");
         assertEquals(true, service.addListing(test));
+    }
+
+    @Test
+    void deleteFromDb() {
+        Scanner sc = new Scanner(System.in);
+
     }
 
     @Test

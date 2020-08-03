@@ -11,7 +11,7 @@
         <span th:text ="${listing.uploadTime}"></span>
         <span th:text ="${listing.email}"></span>
         <span th:text ="${listing.location}"></span>
-        <form action="#" th:action ="@{'/listing/'+${listing.listing.listingId}}" method="post">
+        <form action="#" th:action ="@{'/ll/'+${listing.listingId}}" method="post">
             <input type="submit" value="Remove Listing">
         </form>
     

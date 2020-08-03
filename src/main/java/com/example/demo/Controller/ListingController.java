@@ -37,7 +37,7 @@ public class ListingController {
         return "listing/viewAllListing";
     }
 
-    @PostMapping("listing/viewListing/{listingId}")
+    @PostMapping("/listing/viewListing/{listingId}")
     public String viewListing(@PathVariable("listingId") int listingId, Model model){
         System.out.println(listingId);
         Listing listing = listingService.viewListing(listingId);
@@ -45,7 +45,9 @@ public class ListingController {
         return "listing/viewListing";
     }
 
-    @PostMapping("listing/viewListing/{listingId}")
+    //Need to change URL to more appropriate thing
+    //(Also in viewListing.html)
+    @PostMapping("/ll/{listingId}")
     public String deleteListing(@PathVariable("listingId") int listingId, Model model){
         Listing listing = listingService.viewListing(listingId);
         model.addAttribute("listing", listing);
