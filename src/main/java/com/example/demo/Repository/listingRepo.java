@@ -23,7 +23,6 @@ public class ListingRepo extends DbInteraction {
         if (sqlPrevent(toAdd.toString()) == null) {
             return false;
         }
-
         String query = "INSERT INTO listing(price, name, description, email, location)\n" +
                 "VALUES(?,?,?,?,?)";
         template.update(query, toAdd.getPrice(), toAdd.getName(), toAdd.getDescription(),

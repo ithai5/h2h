@@ -40,9 +40,17 @@ class DemoApplicationTests {
         test.setEmail("morgerfreeman@therealgod.dk");
         test.setName("Captain Sink");
         test.setPrice(45.5);
+
+        //Upload time is done by SQL automatically
         //test.setUploadTime("1970-01-01 00:00:01");
         test.setLocation("Copenhagen");
 
+        assertEquals(true, service.addListing(test));
+
+        test.setEmail("moses@theRealJesus.com");
+        assertEquals(true, service.addListing(test));
+
+        test.setEmail("test@email.com");
         assertEquals(true, service.addListing(test));
     }
 
@@ -50,7 +58,6 @@ class DemoApplicationTests {
     void fetchAll()
     {
         System.out.println(service.fetchAll());
-
     }
     @Test
     void sqlPrevent(){

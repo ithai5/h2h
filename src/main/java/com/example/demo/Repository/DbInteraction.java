@@ -12,7 +12,7 @@ public class DbInteraction {
     JdbcTemplate template;
 
     public String sqlPrevent(String toCheck) {
-        String [] badInput ={";","+"};
+        String [] badInput ={";", "+"};
         for (int i = 0 ; i<badInput.length ; i++){
             if (toCheck.contains(badInput[i])){
                 return null;
