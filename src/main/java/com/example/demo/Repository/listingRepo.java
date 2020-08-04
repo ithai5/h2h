@@ -42,4 +42,11 @@ public class ListingRepo extends DbInteraction {
         RowMapper<Listing> rowMapper = new BeanPropertyRowMapper<>(Listing.class);
         return template.query(query,rowMapper, listingId).get(0);
     }
+
+    public List<Listing> viewUserListing (String email){
+        String query =  "SELECT * FROM listing " +
+                "WHERE email = ?" ;
+        RowMapper<Listing> rowMapper = new BeanPropertyRowMapper<>(Listing.class);
+        return template.query(query, rowMapper, email);
+    }
 }
