@@ -1,0 +1,7 @@
+#Service "Auction House" (marketplace)
+- A website where people post listings for services or goods they need.
+- Users can respond with their bids on other posts
+- Heavy frontend magic <- Focus
+
+
+Think of security!!

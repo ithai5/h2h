@@ -13,27 +13,17 @@ public class User {
     private double rate;
     private String password;
     private String phone;
-    private String test;
-
-    public String getTest() {
-        return test;
-    }
-
-    public void setTest(String test) {
-        this.test = test;
-    }
 
     //CONSTRUCTORS
     public User() {}
 
-    public User(String name, String email, String description, double rate, String password, String phone, String test) {
+    public User(String name, String email, String description, double rate, String password, String phone) {
         this.name = name;
         this.email = email;
         this.description = description;
         this.rate = rate;
         this.password = password;
         this.phone = phone;
-        this.test = test;
     }
 
     //GETTERS + SETTERS

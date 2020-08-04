@@ -16,6 +16,7 @@ public class UserController {
     //Ensured we're always logged in
     public static User loginInfo;
 
+    //Login methods
     @GetMapping("/login")
     public String loginForm() {
         return "user/login";
@@ -40,4 +41,7 @@ public class UserController {
         loginInfo = null;
         return "redirect:/";
     }
+
+
+
 }
