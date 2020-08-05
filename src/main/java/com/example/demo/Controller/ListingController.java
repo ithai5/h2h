@@ -25,7 +25,7 @@ public class ListingController {
 
     @PostMapping("/createNewListing")
     public String addNewListing(@ModelAttribute Listing listing){
-        listing.setEmail("morgerfreeman@therealgod.dk"); //just for checking;
+            listing.setEmail("morganfreeman@therealgod.dk"); //just for checking;
         listingService.addListing(listing);
         return "redirect:/";//need to change to another landing page
     }
