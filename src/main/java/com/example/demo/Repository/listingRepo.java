@@ -45,7 +45,7 @@ public class ListingRepo extends DbInteraction {
 
     public List<Listing> viewUserListing (String email){
         String query =  "SELECT * FROM listing " +
-                "WHERE email = ?" ;
+                "WHERE email = ? ORDER BY uploadTime DESC " ;
         RowMapper<Listing> rowMapper = new BeanPropertyRowMapper<>(Listing.class);
         return template.query(query, rowMapper, email);
     }
