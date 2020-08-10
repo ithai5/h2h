@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${currentUser.name}"></title>
+</head>
+<body>
+    <h1 th:text="${currentUser.name}">'s profile</h1>
+    <span th:text="${currentUser.email}"></span>
+    <span th:text="${currentUser.description}"></span>
+    <span th:text="${currentUser.rate}"></span>
+    <span th:text="${currentUser.phone}"></span>
+
+    <div>
+    <h2>Profile comments</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>User</th>
+            <th>Comment</th>
+            <th>Timestamp</th>
+        </tr>
+        </thead>
+
+        <tbody>
+            <tr th:each="comment:${comments}">
+                <td th:text="${comment.email}"></td>
+                <td th:text="${comment.content}"></td>
+                <td th:text="${comment.uploadTime}"></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+
+    <div>
+        <h2>Your listings</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Upload Time</th>
+                <th></th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr th:each="listing:${listings}">
+                <td th:text="${listing.name}"></td>
+                <td th:text="${listing.price}"></td>
+                <td th:text="${listing.uploadTime}"></td>
+                <td><form action="#" th:action="@{'/listing/viewListing/'+${listing.listingId}}" method="post"><input type="submit" value="Go To Listing"></form></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

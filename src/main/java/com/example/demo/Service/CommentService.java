@@ -1,6 +1,7 @@
 package com.example.demo.Service;
 
 import com.example.demo.Model.Comment;
+import com.example.demo.Model.CommentBox;
 import com.example.demo.Repository.CommentRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,8 @@ public class CommentService {
     public List<Comment> showCommentForBox(int commentBoxId){
         return commentRepo.showCommentForBox(commentBoxId);
     }
+
+    public List<CommentBox> showBoxesForProfile(String email) {return commentRepo.showBoxesForProfile(email);}
 
     public boolean addComment(Comment comment){
         return commentRepo.addComment(comment);

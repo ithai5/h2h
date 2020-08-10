@@ -4,4 +4,9 @@
 - Heavy frontend magic <- Focus
 
 
-Think of security!!
+Think of security!
+
+
+TO-DO / FIX LIST:
+
+- Fix title to include "'s profile" in currentUserProfile.html

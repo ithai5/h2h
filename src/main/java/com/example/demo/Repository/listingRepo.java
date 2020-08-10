@@ -1,9 +1,7 @@
 package com.example.demo.Repository;
 
 import com.example.demo.Model.Listing;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
@@ -38,7 +36,7 @@ public class ListingRepo extends DbInteraction {
 
     public Listing viewListing(int listingId){
         String query = "SELECT * FROM listing " +
-                       "WHERE listingId = ? ";
+                "WHERE listingId = ? ";
         RowMapper<Listing> rowMapper = new BeanPropertyRowMapper<>(Listing.class);
         return template.query(query,rowMapper, listingId).get(0);
     }

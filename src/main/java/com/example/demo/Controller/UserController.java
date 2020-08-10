@@ -24,11 +24,7 @@ public class UserController {
 
     @PostMapping("/validating")
     public String loginCheck(@ModelAttribute User user) {
-        System.out.println(user);
-
         loginInfo = userService.validateUser(user);
-
-        System.out.println(loginInfo);
 
         if (loginInfo == null) {
             //Return to error screen
@@ -41,7 +37,6 @@ public class UserController {
         loginInfo = null;
         return "redirect:/";
     }
-
 
 
 }
