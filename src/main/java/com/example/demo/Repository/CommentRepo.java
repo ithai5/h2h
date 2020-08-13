@@ -33,5 +33,14 @@ public class CommentRepo extends DbInteraction {
         return false;
     }
 
+    public boolean createProfileCommentBox(String email){
+        String query = "INSERT INTO commentBox (email, canComment) VALUES (?,?)";
+        int result = template.update(query,email,1);
+        if (result>0){
+            return true;
+        }
+        return false;
+    }
+
 
 }
