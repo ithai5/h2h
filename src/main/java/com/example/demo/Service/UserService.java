@@ -10,5 +10,10 @@ public class UserService {
     @Autowired
     UserRepo userRepo;
 
-    public User validateUser(User user) {return userRepo.validateUser(user);}
+    public User validateUser (User user) {return userRepo.validateUser(user);}
+
+    public User fetchUserByEmail (String email)
+    {
+        return userRepo.fetchUserByEmail(email);
+    }
 }

@@ -38,4 +38,10 @@ public class UserRepo extends DbInteraction {
             return false;
         }
     }
+
+    public User fetchUserByEmail(String email){
+        String query = "SELECT * FROM user WHERE email = ?";
+        RowMapper<User> rowMapper = new BeanPropertyRowMapper<>(User.class);
+        return template.query(query,rowMapper,email).get(0);
+    }
 }
