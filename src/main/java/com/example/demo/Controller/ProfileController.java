@@ -1,5 +1,6 @@
 package com.example.demo.Controller;
 
+import com.example.demo.Model.User;
 import com.example.demo.Service.CommentService;
 import com.example.demo.Service.ListingService;
 import com.example.demo.Service.UserService;
@@ -7,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -27,12 +29,22 @@ public class ProfileController {
         return "/user/currentUserProfile";
     }
 
+    @PostMapping ("/profile/newUser")
+    public String viewUserProfile(@ModelAttribute String string, Model model) {
+        String email = string;
+        model.addAttribute("user", uService.fetchUserByEmail(email));
+        model.addAttribute("listings", lService.viewUserListing(email));
+        model.addAttribute("comments", cService.showCommentForBox(cService.fetchBoxForUser(email).get(0).getCommentBoxId()));
+        return "/user/userProfile";
+    }
+
+    /*
     @PostMapping ("/profile/{email}")
     public String viewUserProfile(@PathVariable("email") String email, Model model) {
         model.addAttribute("user", uService.fetchUserByEmail(email));
         model.addAttribute("listings", lService.viewUserListing(email));
         model.addAttribute("comments", cService.showCommentForBox(cService.fetchBoxForUser(email).get(0).getCommentBoxId()));
-        return "/user/currentUserProfile";
+        return "/user/userProfile";
     }
-
+    */
 }

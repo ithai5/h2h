@@ -12,3 +12,5 @@ TO-DO / FIX LIST:
 - Fix title to include "'s profile" in currentUserProfile.html
 
 - Notifications on listings with unread comments
+
+- Fix "Go To Listing" button when viewing somebody else's profile, so you can't delete their listings

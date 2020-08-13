@@ -44,5 +44,4 @@ public class UserRepo extends DbInteraction {
         RowMapper<User> rowMapper = new BeanPropertyRowMapper<>(User.class);
         return template.query(query,rowMapper,email).get(0);
     }
-
 }
