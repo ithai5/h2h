@@ -16,7 +16,7 @@ public class CommentService {
         return commentRepo.showCommentForBox(commentBoxId);
     }
 
-    public List<CommentBox> showBoxesForProfile(String email) {return commentRepo.showBoxesForProfile(email);}
+    public List<CommentBox> fetchBoxForUser(String email) {return commentRepo.fetchBoxForUser(email);}
 
     public boolean addComment(Comment comment){
         return commentRepo.addComment(comment);

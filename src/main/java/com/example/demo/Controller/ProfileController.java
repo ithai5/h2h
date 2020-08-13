@@ -12,19 +12,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class ProfileController {
     @Autowired
-    UserService uService;
-    @Autowired
     ListingService lService;
     @Autowired
     CommentService cService;
 
-    User currentUser = UserController.loginInfo;
-
     @GetMapping("/profile")
     public String currentUserProfile(Model model) {
-        model.addAttribute("currentUser", currentUser);
-        model.addAttribute("listings", lService.viewUserListing(currentUser.getEmail()));
-        model.addAttribute("comments", cService.showCommentForBox(cService.showBoxesForProfile(currentUser.getEmail()).get(0).getCommentBoxId()));
+        System.out.println(UserController.loginInfo);
+        model.addAttribute("currentUser", UserController.loginInfo);
+        model.addAttribute("listings", lService.viewUserListing(UserController.loginInfo.getEmail()));
+        model.addAttribute("comments", cService.showCommentForBox(cService.fetchBoxForUser(UserController.loginInfo.getEmail()).get(0).getCommentBoxId()));
         return "/user/currentUserProfile";
     }
 

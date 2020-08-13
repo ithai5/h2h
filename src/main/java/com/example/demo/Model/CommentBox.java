@@ -9,11 +9,11 @@ public class CommentBox {
     private int commentBoxId;
     private boolean canComment;
     private String email;
-    private int listingId;
+    private Integer listingId;
 
     public CommentBox() {}
 
-    public CommentBox(int commentBoxId, boolean canComment, String email, int listingId) {
+    public CommentBox(int commentBoxId, boolean canComment, String email, Integer listingId) {
         this.commentBoxId = commentBoxId;
         this.canComment = canComment;
         this.email = email;
@@ -44,11 +44,11 @@ public class CommentBox {
         this.email = email;
     }
 
-    public int getListingId() {
+    public Integer getListingId() {
         return listingId;
     }
 
-    public void setListingId(int listingId) {
+    public void setListingId(Integer listingId) {
         this.listingId = listingId;
     }
 
