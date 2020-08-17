@@ -47,4 +47,12 @@ public class ListingRepo extends DbInteraction {
         RowMapper<Listing> rowMapper = new BeanPropertyRowMapper<>(Listing.class);
         return template.query(query, rowMapper, email);
     }
+
+    public List<Listing> viewLatestListing(int amount){
+        String query = "SELECT * FROM listing " +
+                        "ORDER BY uploadTime DESC " +
+                        "LIMIT ?";
+        RowMapper<Listing> rowMapper = new BeanPropertyRowMapper<>(Listing.class);
+        return template.query(query,rowMapper,amount);
+    }
 }

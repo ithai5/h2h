@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -7,9 +7,35 @@
 <body>
 <h1>Heloo Worlddddo</h1>
 
+    <!--log in form -->
     <form action="/profile/newUser" method="post">
     <input type="text" name="string" value="test@mail.dk" hidden>
     <input type="submit" value="go Nuts">
     </form>
+
+
+    <!--last 5 listing -->
+    <table>
+        <tr th:each="listing:${listings}">
+            <td th:text="${listing.name}"></td>
+            <td th:text="${listing.uploadTime}"></td>
+            <td th:text="${listing.price}"></td>
+            <td th:text="${listing.location}"></td>
+            <td>
+                <form action="#" th:action="@{'/listing/viewListing/'+${listing.listingId}}" method="post">
+                    <input type="submit" value = "View Listing">
+                </form>
+            </td>
+        </tr>
+    </table>
+
+    <!--Side bar
+    categories listing
+    listing
+    users
+    about
+    contact us
+    -->
+
 </body>
 </html>

@@ -38,5 +38,7 @@ public class ListingService {
         return listingRepo.deleteListing(listingId);
     }
     
-
+    public List<Listing> viewLatestListing(int amount){
+        return listingRepo.viewLatestListing(amount);
+    }
 }
