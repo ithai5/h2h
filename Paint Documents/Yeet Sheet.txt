@@ -14,3 +14,10 @@ TO-DO / FIX LIST:
 - Notifications on listings with unread comments
 
 - Fix "Go To Listing" button when viewing somebody else's profile, so you can't delete their listings
+
+- Fix CreateListing to include Category
+
+- Prettify pages
+
+DONE-SOs:
+ 

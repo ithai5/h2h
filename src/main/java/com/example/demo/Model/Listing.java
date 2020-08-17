@@ -121,6 +121,7 @@ public class Listing {
                 ", uploadTime='" + uploadTime + '\'' +
                 ", email='" + email + '\'' +
                 ", location='" + location + '\'' +
+                ", categoryId=" + categoryId +
                 '}';
     }
 }
