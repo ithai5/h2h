@@ -41,4 +41,8 @@ public class ListingService {
     public List<Listing> viewLatestListing(int amount){
         return listingRepo.viewLatestListing(amount);
     }
+
+    public List<Listing> viewListingByCategory(int categoryId){
+        return listingRepo.viewListingByCategory(categoryId);
+    }
 }

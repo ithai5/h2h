@@ -37,9 +37,13 @@ public class ListingController {
         return "listing/viewAllListing";
     }
 
+    @PostMapping("/listing/viewAllListingByCategory/{categoryId}")
+    public String viewAllListingByCategory(@PathVariable("categoryId") int categoryId,Model model){
+        model.addAttribute("listings", listingService.viewListingByCategory(categoryId));
+        return "listing/viewAllListing";
+    }
     @PostMapping("/listing/viewListing/{listingId}")
     public String viewListing(@PathVariable("listingId") int listingId, Model model){
-        System.out.println(listingId);
         Listing listing = listingService.viewListing(listingId);
         model.addAttribute("listing", listing);
         return "listing/viewListing";

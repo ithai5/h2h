@@ -11,8 +11,10 @@ import java.util.List;
 public class CategoryRepo extends DbInteraction {
 
     public List<Category> fetchAll(){
-        String query = "SELECT * FROM Catergory";
+        String query = "SELECT * FROM category ORDER BY name";
         RowMapper<Category> rowMapper = new BeanPropertyRowMapper<>(Category.class);
         return template.query(query, rowMapper);
     }
+
+
 }

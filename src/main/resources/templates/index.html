@@ -33,12 +33,19 @@
     </table>
 
     <!--Side bar
-    categories listing- change sql
     listing
     users
     about-create own html page
     contact us- create a footer
     -->
+
+<!-- view all the categories that available in the DB -->
+    <table>
+        <tr th:each="category:${categories}">
+            <form action="#" th:action="@{'/listing/viewAllListingByCategory/'  +${category.categoryId}}" method="post">
+                <input type="submit" th:value = "${category.name}"> </form>
+        </tr>
+    </table>
 
 </body>
 </html>
