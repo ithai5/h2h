@@ -15,12 +15,14 @@ public class Listing {
     private String uploadTime;
     private String email;
     private String location;
+    private int categoryId;
 
     public Listing ()
     {
     }
 
-    public Listing(int listingId, double price, String name, String description, String uploadTime, String email, String location) {
+    public Listing (int listingId, double price, String name, String description, String uploadTime, String email, String location, int categoryId)
+    {
         this.listingId = listingId;
         this.price = price;
         this.name = name;
@@ -28,6 +30,7 @@ public class Listing {
         this.uploadTime = uploadTime;
         this.email = email;
         this.location = location;
+        this.categoryId = categoryId;
     }
 
     public int getListingId ()
@@ -96,6 +99,16 @@ public class Listing {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public int getCategoryId ()
+    {
+        return categoryId;
+    }
+
+    public void setCategoryId (int categoryId)
+    {
+        this.categoryId = categoryId;
     }
 
     @Override

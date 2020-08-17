@@ -5,6 +5,7 @@
     <title th:text="${user.name}"></title>
 </head>
 <body>
+    <!-- user info-->
     <h1 th:text="${user.name}">'s profile</h1>
     <span th:text="${user.email}"></span>
     <span th:text="${user.description}"></span>
@@ -12,6 +13,7 @@
     <span th:text="${user.phone}"></span>
 
     <div>
+        <!-- comments for the user -->
     <h2>Profile comments</h2>
     <table>
         <thead>
@@ -31,7 +33,7 @@
         </tbody>
     </table>
     </div>
-
+    <!-- listing that being upload by this user-->
     <div>
         <h2>Your listings</h2>
         <table>
@@ -54,6 +56,7 @@
             </tbody>
         </table>
     </div>
+    <!-- need to add inbox link-->
 
 </body>
 </html>
