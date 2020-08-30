@@ -30,4 +30,6 @@ public class CommentService {
     public int fetchBoxForListing(int listingId){
         return commentRepo.fetchBoxForListing(listingId);
     }
+
+    public boolean createListingCommentBox(int listingId){return commentRepo.createListingCommentBox(listingId);}
 }

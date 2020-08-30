@@ -30,7 +30,7 @@ public class UserController {
             //Return to error screen
             return "redirect:/";
         }
-        return "redirect:/viewAllListing";
+        return "redirect:/";
     }
     
     public String logOut() {
