@@ -26,4 +26,8 @@ public class CommentService {
     public boolean createProfileCommentBox(String email){
         return commentRepo.createProfileCommentBox(email);
     }
+
+    public int fetchBoxForListing(int listingId){
+        return commentRepo.fetchBoxForListing(listingId);
+    }
 }

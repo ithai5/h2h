@@ -42,5 +42,12 @@ public class CommentRepo extends DbInteraction {
         return false;
     }
 
+    public int fetchBoxForListing(int listingId){
+        String query = "SELECT * FROM commentBox " +
+                "WHERE listingId = ?";
+        RowMapper<CommentBox> rowMapper = new BeanPropertyRowMapper<>(CommentBox.class);
+        return template.query(query,rowMapper, listingId).get(0).getCommentBoxId();
+    }
+
 
 }
