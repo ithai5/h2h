@@ -11,7 +11,7 @@ public class Comment {
     private String content;
     private String uploadTime;
     private Boolean isRead;
-    private int commentBoxId;
+    private Integer commentBoxId;
 
     public Comment ()
     {
@@ -67,12 +67,12 @@ public class Comment {
         isRead = read;
     }
 
-    public int getCommentBoxId ()
+    public Integer getCommentBoxId ()
     {
         return commentBoxId;
     }
 
-    public void setCommentBoxId (int commentBoxId)
+    public void setCommentBoxId (Integer commentBoxId)
     {
         this.commentBoxId = commentBoxId;
     }

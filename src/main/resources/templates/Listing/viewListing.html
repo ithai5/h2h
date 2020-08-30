@@ -35,8 +35,8 @@
             </table>
         </div>
         <div>
-            <form action="/postComment" method="post">
-                <textarea name="newComment" cols="64" rows="4" maxlength="256" placeholder="Write a comment here...">
+            <form action="#" th:action="@{'/postComment/'+${listing.listingId}}" method="post">
+                <textarea name="content" cols="64" rows="4" maxlength="256" placeholder="Write a comment here...">
                 </textarea>
                 <br>
                 <input type="submit" value="Comment">
