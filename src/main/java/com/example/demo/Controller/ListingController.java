@@ -1,7 +1,9 @@
 package com.example.demo.Controller;
 
 
+import com.example.demo.Model.Comment;
 import com.example.demo.Model.Listing;
+import com.example.demo.Service.CommentService;
 import com.example.demo.Service.ListingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,6 +19,8 @@ import java.util.List;
 public class ListingController {
     @Autowired
     ListingService listingService;
+    @Autowired
+    CommentService commentService;
 
     @GetMapping("/createNewListing")
     public String fillListing(){
@@ -46,6 +50,8 @@ public class ListingController {
     public String viewListing(@PathVariable("listingId") int listingId, Model model){
         Listing listing = listingService.viewListing(listingId);
         model.addAttribute("listing", listing);
+        List<Comment> comments = commentService.showCommentForBox(commentService.fetchBoxForListing(listingId));
+        model.addAttribute("comments", comments);
         return "listing/viewListing";
     }
 

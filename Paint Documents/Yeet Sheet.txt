@@ -19,5 +19,7 @@ TO-DO / FIX LIST:
 
 - Prettify pages
 
+- Make a check when creating a new comment that it's a max of 256 characters!
+
 DONE-SOs:
  

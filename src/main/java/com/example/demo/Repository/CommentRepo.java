@@ -48,14 +48,13 @@ public class CommentRepo extends DbInteraction {
         RowMapper<CommentBox> rowMapper = new BeanPropertyRowMapper<>(CommentBox.class);
         return template.query(query,rowMapper, listingId).get(0).getCommentBoxId();
     }
-    public boolean createListingCommentBox(int listingId) {
-        String query = "INSERT INTO commentBox (listing, canComment) VALUES (?, ?)";
-        int result = template.update(query,listingId, 1);
+    public boolean createListingCommentBox(String email, int listingId) {
+        String query = "INSERT INTO commentBox (email, listing, canComment) VALUES (?, ?, ?)";
+        int result = template.update(query,email, listingId, 1);
         if (result>0) {
             return true;
         }
         return false;
     }
-
 
 }

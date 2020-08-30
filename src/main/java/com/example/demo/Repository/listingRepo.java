@@ -31,7 +31,7 @@ public class ListingRepo extends DbInteraction {
         template.update(query, toAdd.getPrice(), toAdd.getName(), toAdd.getDescription(),
                 toAdd.getEmail(), toAdd.getLocation(), toAdd.getCategoryId());
 
-        commentService.createListingCommentBox(toAdd.getListingId());
+        commentService.createListingCommentBox(toAdd.getEmail(), toAdd.getListingId());
 
         return true;
     }

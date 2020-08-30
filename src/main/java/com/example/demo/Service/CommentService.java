@@ -31,5 +31,5 @@ public class CommentService {
         return commentRepo.fetchBoxForListing(listingId);
     }
 
-    public boolean createListingCommentBox(int listingId){return commentRepo.createListingCommentBox(listingId);}
+    public boolean createListingCommentBox(String email, int listingId){return commentRepo.createListingCommentBox(email, listingId);}
 }
